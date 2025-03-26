@@ -124,6 +124,8 @@
             $(document).on('click', '.buy-now', function () {
                 const index = $(this).data('index');
                 const product = products[index];
+                localStorage.setItem('cart', JSON.stringify([product]));
+                alert(`Đã chuyển hướng đến trang thanh toán cho ${product.name}!`);
                 window.location.href = "thanhtoan.html";
             });
             // Cập nhật số lượng sản phẩm trong giỏ hàng
